@@ -1,0 +1,305 @@
+
+CREATE TABLE [dbo].[__MigrationHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ContextKey] [nvarchar](300) NOT NULL,
+	[Model] [varbinary](max) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK_dbo.__MigrationHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC,
+	[ContextKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Brand]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Brand](
+	[BrandId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Description] [nvarchar](500) NOT NULL,
+ CONSTRAINT [PK_dbo.Brand] PRIMARY KEY CLUSTERED 
+(
+	[BrandId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Customer]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Customer](
+	[CustomerId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Phone] [nvarchar](20) NOT NULL,
+	[Address] [nvarchar](200) NOT NULL,
+	[Email] [nvarchar](50) NOT NULL,
+	[Url] [nvarchar](100) NULL,
+	[RegDate] [datetime] NOT NULL,
+ CONSTRAINT [PK_dbo.Customer] PRIMARY KEY CLUSTERED 
+(
+	[CustomerId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Item]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Item](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[CategoryId] [int] NULL,
+	[Description] [nvarchar](500) NOT NULL,
+	[PriceIn] [decimal](18, 2) NOT NULL,
+	[PriceOut] [decimal](18, 2) NOT NULL,
+	[Quantity] [int] NULL,
+	[ReorderLevel] [int] NULL,
+ CONSTRAINT [PK_dbo.Item] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Labour]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Labour](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Type] [int] NULL,
+	[Description] [nvarchar](500) NULL,
+	[Email] [nvarchar](50) NOT NULL,
+	[Nic] [nvarchar](10) NOT NULL,
+ CONSTRAINT [PK_dbo.Labour] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Model]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Model](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Description] [nvarchar](500) NULL,
+	[BrandId] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.Model] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Task]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Task](
+	[Id] [nvarchar](128) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Description] [nvarchar](500) NULL,
+	[VehicleJobTasks_Id] [int] NULL,
+ CONSTRAINT [PK_dbo.Task] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[User]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[User](
+	[Email] [nvarchar](50) NOT NULL,
+	[Password] [nvarchar](50) NOT NULL,
+	[State] [int] NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Nic] [nvarchar](10) NOT NULL,
+	[RegDate] [datetime] NOT NULL,
+ CONSTRAINT [PK_dbo.User] PRIMARY KEY CLUSTERED 
+(
+	[Email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[VehicleJobs]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VehicleJobs](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IsFinished] [bit] NOT NULL,
+	[StartDateTime] [datetime] NOT NULL,
+	[EndDateTime] [datetime] NOT NULL,
+	[FinalAmount] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_dbo.VehicleJobs] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[VehicleJobTasks]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VehicleJobTasks](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[JobId] [int] NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[IsClosed] [bit] NOT NULL,
+	[TaskCost] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_dbo.VehicleJobTasks] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Vehicles]    Script Date: 11/5/2016 4:35:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Vehicles](
+	[VehicleNumber] [nvarchar](128) NOT NULL,
+	[BrandId] [int] NOT NULL,
+	[EngineNumber] [nvarchar](50) NULL,
+	[ChassyNumber] [nvarchar](50) NULL,
+	[Description] [nvarchar](500) NULL,
+	[Owner] [int] NOT NULL,
+	[Email] [nvarchar](50) NOT NULL,
+	[RegDate] [datetime] NOT NULL,
+	[Url] [nvarchar](10) NULL,
+	[Model_Id] [int] NULL,
+	[VehicleJobs_Id] [int] NULL,
+ CONSTRAINT [PK_dbo.Vehicles] PRIMARY KEY CLUSTERED 
+(
+	[VehicleNumber] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Index [IX_BrandId]    Script Date: 11/5/2016 4:35:59 PM ******/
+CREATE NONCLUSTERED INDEX [IX_BrandId] ON [dbo].[Model]
+(
+	[BrandId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_VehicleJobTasks_Id]    Script Date: 11/5/2016 4:35:59 PM ******/
+CREATE NONCLUSTERED INDEX [IX_VehicleJobTasks_Id] ON [dbo].[Task]
+(
+	[VehicleJobTasks_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_JobId]    Script Date: 11/5/2016 4:35:59 PM ******/
+CREATE NONCLUSTERED INDEX [IX_JobId] ON [dbo].[VehicleJobTasks]
+(
+	[JobId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_BrandId]    Script Date: 11/5/2016 4:35:59 PM ******/
+CREATE NONCLUSTERED INDEX [IX_BrandId] ON [dbo].[Vehicles]
+(
+	[BrandId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_Email]    Script Date: 11/5/2016 4:35:59 PM ******/
+CREATE NONCLUSTERED INDEX [IX_Email] ON [dbo].[Vehicles]
+(
+	[Email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_Model_Id]    Script Date: 11/5/2016 4:35:59 PM ******/
+CREATE NONCLUSTERED INDEX [IX_Model_Id] ON [dbo].[Vehicles]
+(
+	[Model_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_Owner]    Script Date: 11/5/2016 4:35:59 PM ******/
+CREATE NONCLUSTERED INDEX [IX_Owner] ON [dbo].[Vehicles]
+(
+	[Owner] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_VehicleJobs_Id]    Script Date: 11/5/2016 4:35:59 PM ******/
+CREATE NONCLUSTERED INDEX [IX_VehicleJobs_Id] ON [dbo].[Vehicles]
+(
+	[VehicleJobs_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Model]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Model_dbo.Brand_BrandId] FOREIGN KEY([BrandId])
+REFERENCES [dbo].[Brand] ([BrandId])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Model] CHECK CONSTRAINT [FK_dbo.Model_dbo.Brand_BrandId]
+GO
+ALTER TABLE [dbo].[Task]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Task_dbo.VehicleJobTaskItems_VehicleJobTaskItem_Id] FOREIGN KEY([VehicleJobTasks_Id])
+REFERENCES [dbo].[VehicleJobTasks] ([Id])
+GO
+ALTER TABLE [dbo].[Task] CHECK CONSTRAINT [FK_dbo.Task_dbo.VehicleJobTaskItems_VehicleJobTaskItem_Id]
+GO
+ALTER TABLE [dbo].[VehicleJobTasks]  WITH CHECK ADD  CONSTRAINT [FK_dbo.VehicleJobTaskItems_dbo.VehicleJobs_JobId] FOREIGN KEY([JobId])
+REFERENCES [dbo].[VehicleJobs] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[VehicleJobTasks] CHECK CONSTRAINT [FK_dbo.VehicleJobTaskItems_dbo.VehicleJobs_JobId]
+GO
+ALTER TABLE [dbo].[Vehicles]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Vehicles_dbo.Brand_BrandId] FOREIGN KEY([BrandId])
+REFERENCES [dbo].[Brand] ([BrandId])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Vehicles] CHECK CONSTRAINT [FK_dbo.Vehicles_dbo.Brand_BrandId]
+GO
+ALTER TABLE [dbo].[Vehicles]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Vehicles_dbo.Customer_Owner] FOREIGN KEY([Owner])
+REFERENCES [dbo].[Customer] ([CustomerId])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Vehicles] CHECK CONSTRAINT [FK_dbo.Vehicles_dbo.Customer_Owner]
+GO
+ALTER TABLE [dbo].[Vehicles]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Vehicles_dbo.Model_Model_Id] FOREIGN KEY([Model_Id])
+REFERENCES [dbo].[Model] ([Id])
+GO
+ALTER TABLE [dbo].[Vehicles] CHECK CONSTRAINT [FK_dbo.Vehicles_dbo.Model_Model_Id]
+GO
+ALTER TABLE [dbo].[Vehicles]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Vehicles_dbo.User_Email] FOREIGN KEY([Email])
+REFERENCES [dbo].[User] ([Email])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Vehicles] CHECK CONSTRAINT [FK_dbo.Vehicles_dbo.User_Email]
+GO
+ALTER TABLE [dbo].[Vehicles]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Vehicles_dbo.VehicleJobs_VehicleJobs_Id] FOREIGN KEY([VehicleJobs_Id])
+REFERENCES [dbo].[VehicleJobs] ([Id])
+GO
+ALTER TABLE [dbo].[Vehicles] CHECK CONSTRAINT [FK_dbo.Vehicles_dbo.VehicleJobs_VehicleJobs_Id]
+GO
+USE [master]
+GO
+ALTER DATABASE [TESTEEE] SET  READ_WRITE 
+GO

@@ -1,0 +1,14 @@
+D:\GIT\DATABASE\DATABASE\App.DbAccess\bin\Debug\App.DbAccess.dll.config
+D:\GIT\DATABASE\DATABASE\App.DbAccess\bin\Debug\App.DbAccess.dll
+D:\GIT\DATABASE\DATABASE\App.DbAccess\bin\Debug\App.DbAccess.pdb
+D:\GIT\DATABASE\DATABASE\App.DbAccess\bin\Debug\EntityFramework.dll
+D:\GIT\DATABASE\DATABASE\App.DbAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIT\DATABASE\DATABASE\App.DbAccess\bin\Debug\EntityFramework.xml
+D:\GIT\DATABASE\DATABASE\App.DbAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIT\DATABASE\DATABASE\App.DbAccess\obj\Debug\App.DbAccess.csprojResolveAssemblyReference.cache
+D:\GIT\DATABASE\DATABASE\App.DbAccess\obj\Debug\App.DbAccess.dll
+D:\GIT\DATABASE\DATABASE\App.DbAccess\obj\Debug\App.DbAccess.pdb
+D:\GIT\DATABASE\DATABASE\App.DbAccess\bin\Debug\App.Domain.dll
+D:\GIT\DATABASE\DATABASE\App.DbAccess\bin\Debug\App.Domain.pdb
+D:\GIT\DATABASE\DATABASE\App.DbAccess\obj\Debug\App.DbAccess.Migrations.init.resources
+D:\GIT\DATABASE\DATABASE\App.DbAccess\obj\Debug\App.DbAccess.csproj.GenerateResource.Cache
