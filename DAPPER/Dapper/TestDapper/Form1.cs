@@ -55,18 +55,18 @@ namespace TestDapper
         {
             try
             {
-var arr = new BrandDbService().SelectMultiple();
+                var arr = new BrandDbService().SelectMultiple();
 
-            gvBrands.DataSource = arr[0];
+                gvBrands.DataSource = arr[0];
 
-            gvModel.DataSource = arr[1];
+                gvModel.DataSource = arr[1];
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 throw;
             }
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
