@@ -16,19 +16,21 @@ namespace App.DbAccess.Migrations
         {
             //  This method will be called after migrating to the latest version.
 
-            //You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //to avoid creating duplicate seed data.E.g.
+             
+              context.Brands.AddOrUpdate(
+                   new Model.Brand { Name = "Toyota" },
+                    new Model.Brand { Name = "Nissan" },
+                   new Model.Brand { Name = "Micro" }
+              );
 
-            context.Brands.AddOrUpdate(
-             new Domain.Brand { Name = "Toyota", Description = "Toyota Japan" },
-              new Domain.Brand { Name = "Nissan", Description = "Nissan Japan" },
-               new Domain.Brand { Name = "Mitsubishi", Description = "Mitsubishi Japan" }
-            );
-
+            //models
             context.Models.AddOrUpdate(
-                new Domain.Model { Name = "Auqa", Description = "hibrid", BrandId = 1 },
-                 new Domain.Model { Name = "Vitz", Description = "patrol", BrandId = 1 }
-                );
+                 new Model.Model { Name = "Auqa",BrandId=1 },
+                  new Model.Model { Name = "Starlet",BrandId = 1 },
+                 new Model.Model { Name = "Panda",BrandId = 3 },
+                 new Model.Model { Name = "Sunney", BrandId = 2 }
+
+            );
 
         }
     }

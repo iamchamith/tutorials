@@ -1,0 +1,10 @@
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\bin\Debug\App.Model.dll.config
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\bin\Debug\App.Model.dll
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\bin\Debug\App.Model.pdb
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\bin\Debug\EntityFramework.dll
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\bin\Debug\EntityFramework.xml
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\obj\Debug\App.Model.csprojResolveAssemblyReference.cache
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\obj\Debug\App.Model.dll
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Model\obj\Debug\App.Model.pdb

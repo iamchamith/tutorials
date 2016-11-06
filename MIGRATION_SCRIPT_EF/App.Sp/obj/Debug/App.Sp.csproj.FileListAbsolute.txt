@@ -1,0 +1,9 @@
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Sp\bin\Debug\App.Sp.exe
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Sp\bin\Debug\App.Sp.pdb
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Sp\obj\Debug\App.Sp.exe
+D:\GIT\Tutorials\MigrationScripts\App.Model\App.Sp\obj\Debug\App.Sp.pdb
+D:\GIT\TUTORIALS\MIGRATION_SCRIPT_EF\App.Sp\obj\Debug\App.Sp.exe
+D:\GIT\TUTORIALS\MIGRATION_SCRIPT_EF\App.Sp\obj\Debug\App.Sp.pdb
+D:\GIT\TUTORIALS\MIGRATION_SCRIPT_EF\App.Sp\bin\Debug\App.Sp.exe
+D:\GIT\TUTORIALS\MIGRATION_SCRIPT_EF\App.Sp\bin\Debug\App.Sp.pdb
+D:\GIT\TUTORIALS\MIGRATION_SCRIPT_EF\App.Sp\obj\Debug\App.Sp.csprojResolveAssemblyReference.cache

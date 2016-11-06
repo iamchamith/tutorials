@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A2D91E2C-9746-4392-86DE-39DB5DA3E116}</ProjectGuid>
+    <ProjectGuid>{1A1C8128-8572-4EA5-8E73-B52BBC804F33}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>App.DbAccess</RootNamespace>
@@ -49,9 +49,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201611051135492_init.cs" />
-    <Compile Include="Migrations\201611051135492_init.Designer.cs">
-      <DependentUpon>201611051135492_init.cs</DependentUpon>
+    <Compile Include="Migrations\201611051211564_createbrandTable.cs" />
+    <Compile Include="Migrations\201611051211564_createbrandTable.Designer.cs">
+      <DependentUpon>201611051211564_createbrandTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051218528_createModel.cs" />
+    <Compile Include="Migrations\201611051218528_createModel.Designer.cs">
+      <DependentUpon>201611051218528_createModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051224035_createCutomerTable.cs" />
+    <Compile Include="Migrations\201611051224035_createCutomerTable.Designer.cs">
+      <DependentUpon>201611051224035_createCutomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051237395_moreTable.cs" />
+    <Compile Include="Migrations\201611051237395_moreTable.Designer.cs">
+      <DependentUpon>201611051237395_moreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051251033_newTables.cs" />
+    <Compile Include="Migrations\201611051251033_newTables.Designer.cs">
+      <DependentUpon>201611051251033_newTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051304265_final.cs" />
+    <Compile Include="Migrations\201611051304265_final.Designer.cs">
+      <DependentUpon>201611051304265_final.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051306114_addRelationbetweenvehicleandvehiceljob.cs" />
+    <Compile Include="Migrations\201611051306114_addRelationbetweenvehicleandvehiceljob.Designer.cs">
+      <DependentUpon>201611051306114_addRelationbetweenvehicleandvehiceljob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051307492_refactor.cs" />
+    <Compile Include="Migrations\201611051307492_refactor.Designer.cs">
+      <DependentUpon>201611051307492_refactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051310091_refactor2.cs" />
+    <Compile Include="Migrations\201611051310091_refactor2.Designer.cs">
+      <DependentUpon>201611051310091_refactor2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051312489_seedBrands.cs" />
+    <Compile Include="Migrations\201611051312489_seedBrands.Designer.cs">
+      <DependentUpon>201611051312489_seedBrands.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PlutoContext.cs" />
@@ -62,14 +98,41 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App.Domain\App.Domain.csproj">
-      <Project>{4c0890ac-a6e2-4640-8184-d4f7559a2ba3}</Project>
-      <Name>App.Domain</Name>
+    <ProjectReference Include="..\App.Model\App.Model.csproj">
+      <Project>{9e3386ba-fb12-45c2-9585-e57c5a232d1d}</Project>
+      <Name>App.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611051135492_init.resx">
-      <DependentUpon>201611051135492_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611051211564_createbrandTable.resx">
+      <DependentUpon>201611051211564_createbrandTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051218528_createModel.resx">
+      <DependentUpon>201611051218528_createModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051224035_createCutomerTable.resx">
+      <DependentUpon>201611051224035_createCutomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051237395_moreTable.resx">
+      <DependentUpon>201611051237395_moreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051251033_newTables.resx">
+      <DependentUpon>201611051251033_newTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051304265_final.resx">
+      <DependentUpon>201611051304265_final.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051306114_addRelationbetweenvehicleandvehiceljob.resx">
+      <DependentUpon>201611051306114_addRelationbetweenvehicleandvehiceljob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051307492_refactor.resx">
+      <DependentUpon>201611051307492_refactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051310091_refactor2.resx">
+      <DependentUpon>201611051310091_refactor2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051312489_seedBrands.resx">
+      <DependentUpon>201611051312489_seedBrands.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
