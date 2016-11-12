@@ -1,0 +1,73 @@
+﻿@model EMSystem.Models.EmployeeEditViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Hidden("id", Model.Id)
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <a class="btn btn-default btn-xs pull-left" style="margin-top :5px;" href="/"><i class="fa fa-backward"></i> Back to List</a>
+            <a class="btn btn-danger pull-right" style="margin-left:10px" href="/home/detail?empId=@Model.Id"><i class="fa fa-trash-o"></i> Cancel</a>
+            <button type="submit" class="btn btn-primary pull-right" ><i class="fa fa-floppy-o"></i> Save</button>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center">
+                    <img alt="User Pic" src="~/Content/images/default_user_icon.png" class="img-circle img-responsive hidden-sm hidden-xs">
+                    <h3 class="visible-sm visible-xs">@Model.FullName</h3>
+                </div>
+                <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                        <tbody>
+                            <tr>
+                                <td>Title </td>
+                                <td>@Html.DropDownList("titleOfEmployee", Model.TitleOfEmployee.ToSelect(), new { @class = "form-control" })</td>
+                            </tr>
+                            <tr>
+                                <td>First Name</td>
+                                <td>@Html.TextBox("firstName", Model.FirstName, new { @class = "form-control" , required = "required"})
+                                @Html.ValidationMessageFor(model => model.FirstName)</td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td>@Html.TextBox("lastName", Model.LastName, new { @class = "form-control", required = "required" })</td>
+                            </tr>
+                            <tr>
+                                <td>Date Of Birth</td>
+                                <td>@Html.TextBox("dateOfBirth", Model.DateOfBirth.ToString("dd/MM/yyyy"), new { @class = "form-control", required = "required" })</td>
+                            </tr>
+                            <tr>
+                                <td>Date of Join</td>
+                                <td>@Html.TextBox("dateOfJoin", Model.DateOfJoin.ToString("dd/MM/yyyy"), new { @class = "form-control", required = "required" })</td>
+                            </tr>
+
+                            <tr>
+                                <td>Position</td>
+                                <td>@Html.DropDownList("position", Model.Position.ToSelect<Position>(), new { @class = "form-control" })</td>
+                            </tr>
+                            <tr>
+                                <td>Salary</td>
+                                <td>@Html.TextBox("salary", Model.Salary, new { @class = "form-control", required = "required" })</td>
+                            </tr>
+                            <tr>
+                                <td>Office</td>
+                                <td>@Html.DropDownList("office", Model.Office.ToSelect<Office>(), new { @class = "form-control" })</td>
+                            </tr>
+                            <tr>
+                                <td>Division</td>
+                                <td>@Html.DropDownList("division", Model.Division.ToSelect<Division>(), new { @class = "form-control" })</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="currencyFormatter" type="hidden" value="@System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencySymbol" />
+}
+
+@section scripts{
+    <script src="~/Scripts/app/app-edit.js"></script>
+}

@@ -1,0 +1,70 @@
+﻿@model EMSystem.Models.EmployeeViewModel
+@{
+    ViewBag.Title = "Detail";
+}
+
+
+
+@using (Html.BeginForm("Delete", "Home", FormMethod.Post))
+{
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <a class="btn btn-default btn-xs pull-left" style="margin-top :5px;" href="/"><i class="fa fa-backward"></i> Back to List</a>
+            <h3 class="panel-title pull-left" style="padding-top :7px; margin-left:10px">@Model.FullName</h3>
+            <button type="submit" class="btn btn-danger pull-right" style="margin-left:10px" onclick="return confirm('Are you sure?')"><i class="fa fa-trash-o"></i> Delete</button>
+            <a class="btn btn-primary pull-right" href="/home/edit?empId=@Model.Id"><i class="fa fa-wrench"></i> Edit</a>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center">
+                    <img alt="User Pic" src="~/Content/images/default_user_icon.png" class="img-circle img-responsive hidden-sm hidden-xs">
+                    <h3 class="visible-sm visible-xs">@Model.FullName</h3>
+                </div>
+                @Html.HiddenFor(model => model.Id)
+                <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td>@Model.Title</td>
+                            </tr>
+                            <tr>
+                                <td>First Name</td>
+                                <td>@Model.FirstName</td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td>@Model.LastName</td>
+                            </tr>
+                            <tr>
+                                <td>Date Of Birth</td>
+                                <td>@Model.DateOfBirth.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                            <tr>
+                                <td>Date of Join</td>
+                                <td>@Model.DateOfJoin.ToString("dd/MM/yyyy")</td>
+                            </tr>
+
+                            <tr>
+                                <td>Position</td>
+                                <td>@Model.Position</td>
+                            </tr>
+                            <tr>
+                                <td>Salary</td>
+                                <td>@string.Format("{0:c}", Model.Salary)</td>
+                            </tr>
+                            <tr>
+                                <td>Office</td>
+                                <td>@Model.Office</td>
+                            </tr>
+                            <tr>
+                                <td>Division</td>
+                                <td>@Model.Division</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}

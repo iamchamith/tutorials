@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-heading clearfix">
+            <a href="/home/add" class="btn btn-success pull-right" style="margin-left:10px"><i class="fa fa-user"></i> Add Employee</a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table id="tblEmployee" class="datatables-table table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Office</th>
+                    <th>Post</th>
+                    <th>Period of Service</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/Scripts/app/app.list.js"></script>
+}
