@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Authontication and Authorization</h2>
+
+<div class="row">
+    <div class="col-lg-4 col-4 col-md-4">
+        <h2>Register</h2>
+        @{ Html.RenderPartial("_Register"); }
+    </div>
+    <div class="col-lg-4 col-4 col-md-4">
+        <h2>Login</h2>
+        @{ Html.RenderPartial("_Login"); }
+    </div>
+    <div class="col-lg-4 col-4 col-md-4">
+        <h2>Forget Password</h2>
+        @{ Html.RenderPartial("_ForgetPassword"); }
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-4 col-4 col-md-4">
+        <h2>Access Pages</h2>
+        @{ Html.RenderPartial("_SystemUserPages"); }
+    </div>
+    <div class="col-lg-4 col-4 col-md-4">
+        <h2>Social Network login</h2>
+        @{ Html.RenderPartial("_SocialnetworkLogin"); }
+    </div>
+</div>

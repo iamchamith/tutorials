@@ -70,3 +70,4 @@ var ModuleDesigningPatten;
         student.update(new Student(1, 'Madushan', new Date(1990, 5, 4)));
     });
 })(ModuleDesigningPatten || (ModuleDesigningPatten = {}));
+//# sourceMappingURL=moduleDesigningPatten.js.map

@@ -26,3 +26,4 @@ var SingltonDesigningPatten;
         }
     });
 })(SingltonDesigningPatten || (SingltonDesigningPatten = {}));
+//# sourceMappingURL=SingletonDesigningPatten.js.map

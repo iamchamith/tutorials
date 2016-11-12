@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <student>
+    <name>chamith</name>
+    <id>1</id>
+  </student>
+  <student>
+    <name>saranga</name>
+    <id>2</id>
+  </student>
+  <student>
+    <name>gayan</name>
+    <id>3</id>
+  </student>
+  <student>
+    <name>chamara</name>
+    <id>4</id>
+  </student>
+</root>

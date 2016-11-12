@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -98,6 +100,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ts\dts\CustomFieldsHelpers.js.map" />
+    <Content Include="ts\dts\helpers_ts.js.map" />
+    <Content Include="ts\dts\postredirect.js.map" />
+    <Content Include="ts\dts\tsmessage.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -106,18 +112,60 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="jasmine\studenttest.js" />
+    <Content Include="jasmine\jasmine.js" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="ts\dts\CustomFieldsHelpers.js" />
+    <Content Include="ts\dts\helpers_ts.js" />
+    <Content Include="ts\dts\postredirect.js" />
+    <Content Include="ts\dts\tsmessage.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="jquaryPro\" />
+    <Folder Include="kendoUIPro\" />
+    <Folder Include="ts\appts\" />
+    <Folder Include="typescriptRepository\" />
+    <Folder Include="typeScript\" />
+    <Folder Include="undescoewJS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="jasmine\student.ts" />
+    <TypeScriptCompile Include="javascriptDesigningPatten\moduleDesigningPatten.ts" />
+    <TypeScriptCompile Include="javascriptDesigningPatten\Objects.ts" />
+    <TypeScriptCompile Include="javascriptDesigningPatten\SingletonDesigningPatten.ts" />
+    <TypeScriptCompile Include="ts\dts\bootstrap.d.ts" />
+    <TypeScriptCompile Include="ts\dts\cryptojs.d.ts" />
+    <TypeScriptCompile Include="ts\dts\CustomFieldsHelpers.ts" />
+    <TypeScriptCompile Include="ts\dts\google.maps.d.ts" />
+    <TypeScriptCompile Include="ts\dts\helpers_ts.ts" />
+    <TypeScriptCompile Include="ts\dts\jquery.d.ts" />
+    <TypeScriptCompile Include="ts\dts\jquery.fitvids.d.ts" />
+    <TypeScriptCompile Include="ts\dts\jquery.placeholder.d.ts" />
+    <TypeScriptCompile Include="ts\dts\kendo.all.d.ts" />
+    <TypeScriptCompile Include="ts\dts\leaflet.d.ts" />
+    <TypeScriptCompile Include="ts\dts\moment-timezone.d.ts" />
+    <TypeScriptCompile Include="ts\dts\moment.d.ts" />
+    <TypeScriptCompile Include="ts\dts\notifyjs.d.ts" />
+    <TypeScriptCompile Include="ts\dts\postredirect.ts" />
+    <TypeScriptCompile Include="ts\dts\stripe.d.ts" />
+    <TypeScriptCompile Include="ts\dts\sweetalert.d.ts" />
+    <TypeScriptCompile Include="ts\dts\tsmessage.ts" />
+    <TypeScriptCompile Include="ts\dts\underscore.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

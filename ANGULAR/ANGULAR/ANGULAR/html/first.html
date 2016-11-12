@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html ng-app="parking">
+<head>
+    <title>[Packt] Parking</title>
+
+    <script src="../Scripts/angular.js"></script>
+    <script>
+        var parking = angular.module("parking", []);
+        parking.controller("parkingCtrl", function ($scope) {
+            $scope.appTitle = "[Packt] Parking";
+            $scope.cars = [
+                { plate: 'a', entrance: 'b' },
+            { plate: 'c', entrance: 'd' },
+            { plate: 'e', entrance: 'f' },
+            { plate: 'g', entrance: 'h' }
+            ];
+            $scope.park = function (e) {
+                alert(e);
+            };
+        });
+    </script>
+</head>
+<body ng-controller="parkingCtrl">
+    <h3 ng-bind="appTitle"></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Plate</th>
+                <th>Entrance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="car in cars">
+                <td><span ng-bind="car.plate"></span></td>
+                <td><span ng-bind="car.entrance"></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <button ng-click="park('hi chamith')" >Click me</button>
+        </body>
+</html>
