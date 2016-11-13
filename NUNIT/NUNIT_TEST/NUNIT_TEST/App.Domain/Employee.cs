@@ -23,10 +23,6 @@ namespace App.Domain
         [StringLength(10)]
         [Required]
         public string Nic { get; set; }
-
-        public int DepartmentId { get; set; }
-
-        [ForeignKey("DepartmentId")]
-        public virtual Department Department { get; set; }
+ 
     }
 }

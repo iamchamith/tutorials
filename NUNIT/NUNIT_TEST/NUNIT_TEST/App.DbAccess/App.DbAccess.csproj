@@ -53,6 +53,10 @@
     <Compile Include="Migrations\201611100648251_first.Designer.cs">
       <DependentUpon>201611100648251_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611130613154_removeDepartment.cs" />
+    <Compile Include="Migrations\201611130613154_removeDepartment.Designer.cs">
+      <DependentUpon>201611130613154_removeDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PlutoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611100648251_first.resx">
       <DependentUpon>201611100648251_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611130613154_removeDepartment.resx">
+      <DependentUpon>201611130613154_removeDepartment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

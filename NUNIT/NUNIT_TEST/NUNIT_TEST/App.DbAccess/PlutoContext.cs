@@ -10,12 +10,10 @@ namespace App.DbAccess
 {
     public class PlutoContext : DbContext
     {
-        public PlutoContext() : base(@"Data Source=JET-DEV03\TOWNSUITE;Initial Catalog=UnitTest;Integrated Security=True")
+        public PlutoContext() : base(@"Data Source=DELL\SQLEXPRESS1;Initial Catalog=nunit;Integrated Security=True;Pooling=False")
         {
         }
 
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Department> Departments { get; set; }
-
+        public DbSet<Employee> Employees{ get; set; }
     }
 }

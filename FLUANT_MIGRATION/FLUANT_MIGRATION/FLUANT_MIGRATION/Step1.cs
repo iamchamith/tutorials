@@ -12,12 +12,12 @@ namespace FLUANT_MIGRATION
         public override void Up()
         {
             Create.Table("Users");
-            Delete.Table("Users");
+          
         }
 
         public override void Down()
         {
-           
+             Delete.Table("Users");
         }
     }
 }

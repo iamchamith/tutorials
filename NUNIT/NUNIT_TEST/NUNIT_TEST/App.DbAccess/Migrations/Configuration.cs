@@ -19,12 +19,12 @@ namespace App.DbAccess.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
+            context.Employees.AddOrUpdate(
+             new Domain.Employee { Name = "Chamith", Nic = "123456V", Phone = "45454" },
+              new Domain.Employee { Name = "Gihan", Nic = "223456V", Phone = "45454" },
+                 new Domain.Employee { Name = "Nalaka", Nic = "423456V", Phone = "34454" },
+                 new Domain.Employee { Name = "Ranga", Nic = "523456V", Phone = "55454" }
+ );
             //
         }
     }
