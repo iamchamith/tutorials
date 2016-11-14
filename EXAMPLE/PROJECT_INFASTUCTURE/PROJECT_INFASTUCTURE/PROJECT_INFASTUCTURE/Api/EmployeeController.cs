@@ -49,7 +49,7 @@ namespace PROJECT_INFASTUCTURE.Api
                 return Actions.Error(ex);
             }
         }
-        [HttpPost]
+        [HttpDelete]
         public ActionDetail Delete(int key)
         {
             try

@@ -60,24 +60,20 @@
                 name: "",
                 phone: "",
                 regDate: kendo.toString(new Date(), "")
-            });
+            }, 'c');
 
         });
 
     }
 
-    render({
-        titile: 'Create Employee',
-        name: "",
-        phone: "",
-        regDate: kendo.toString(new Date(), "")
-    }); function render(e: any) {
+    function render(e: any, mode: string) {
         var viewModel = kendo.observable({
             titile: e.titile,
             name: e.name,
             email: e.email,
             phone: e.phone,
-            regDate: e.regDate
+            regDate: e.regDate,
+            id : 0
         });
 
         var templateContent = $("#employee-template").html();
@@ -88,8 +84,14 @@
         $('#model_main').modal('show').appendTo('body');
         kendo.bind($("#model-content"), viewModel);
 
+        $('#btnSave').data(mode)
+
         $('#btnSave').on('click', () => {
-            emp.create();
+            if (mode === 'c') {
+                emp.create();
+            } else {
+                emp.update();
+            }
         });
     }
 
@@ -97,10 +99,15 @@
 
         const baseUrl = "http://localhost:11296/api/Employee/";
         function apiConnector(action: string, data: any, method: string) {
-
+ 
             var defer = $.Deferred();
             $.ajax({
-                url: baseUrl + action, data: data, method: method,
+                url: baseUrl + action,
+                data: (method === 'get') ? data : JSON.stringify(data),
+                method: method,
+                dataType: 'json',
+                type:method,
+                contentType: "application/json; charset=utf-8",
                 success: (e) => { defer.resolve(e) }
             });
             return defer;
@@ -139,15 +146,35 @@
                     });
             },
             update: (e?) => {
-                var data = {
-                    Name: $('#txtName').val(),
-                    Email: $('#txtEmail').val(),
-                    Phone: $('#txtPhone').val(),
-                    key: $('#hndId').val()
-                }
-                apiConnector('', data, 'post').done((e) => {
-                    console.log();
-                });
+
+                swal({
+                    title: "Are you sure?",
+                    text: "Do you want to update employee",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    closeOnConfirm: false
+                },
+                    function () {
+                        var data = {
+                            Name: $('#txtName').val(),
+                            Email: $('#txtEmail').val(),
+                            Phone: $('#txtPhone').val(),
+                            key: $('#hndId').val()
+                        }
+                        apiConnector('Update', data, 'post').done((e) => {
+                            console.log(e);
+                            var d: any;
+                            d = e;
+                            if (d.State) {
+                                swal("Updated!", "", "success");
+                                emp.readAll();
+                            } else {
+                                swal("Error!", "", "error");
+                            }
+                        });
+                    });
             },
             delete: (e?) => {
 
@@ -162,7 +189,7 @@
                 },
                     function () {
 
-                        apiConnector('Delete', { Key: e }, 'post').done((e) => {
+                        apiConnector('Delete', { Key: e }, 'delete').done((e) => {
                             console.log(e);
                             var d: any;
                             d = e;
@@ -170,7 +197,7 @@
                                 swal("Deleted!", "", "success");
                                 emp.readAll();
                             } else {
-                                swal("Deleted!", "", "error");
+                                swal("Error!", "", "error");
                             }
                         });
 
@@ -185,8 +212,9 @@
                         name: d.Content.Name,
                         phone: d.Content.Phone,
                         email: d.Content.Email,
-                        regDate: kendo.toString(new Date(), "")
-                    });
+                        regDate: kendo.toString(new Date(), ""),
+                        id : d.Content.Id
+                    }, 'u');
                     console.log(e);
                 });
             },
