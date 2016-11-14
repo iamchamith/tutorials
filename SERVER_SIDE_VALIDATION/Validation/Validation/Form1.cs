@@ -28,17 +28,18 @@ namespace Validation
                 FirstName = txtFirstName.Text,
                 LastName = txtLastName.Text,
                 Password = txtPassword.Text,
-                Price = (int)txtPrice.Value
+                Price = (int)txtPrice.Value,
+                Discription = txtDiscription.Text
             };
 
-            // set default
-            model.MyError = "abcdefghijklmnop";
-
+           
             ValidationContext context = new ValidationContext(model, null, null);
             IList<ValidationResult> errors = new List<ValidationResult>();
             var errorList = new List<string>();
+            // check is there errors
             if (!Validator.TryValidateObject(model, context, errors, true))
             {
+                // get error list
                 foreach (ValidationResult result in errors)
                 { 
                     errorList.Add(result.ErrorMessage);

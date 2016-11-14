@@ -46,6 +46,8 @@
             this.txtConfirmEmail = new System.Windows.Forms.TextBox();
             this.btnChecked = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtDiscription = new System.Windows.Forms.RichTextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             this.SuspendLayout();
@@ -180,7 +182,7 @@
             // 
             // btnChecked
             // 
-            this.btnChecked.Location = new System.Drawing.Point(394, 261);
+            this.btnChecked.Location = new System.Drawing.Point(463, 323);
             this.btnChecked.Name = "btnChecked";
             this.btnChecked.Size = new System.Drawing.Size(114, 27);
             this.btnChecked.TabIndex = 18;
@@ -198,11 +200,30 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "System.ComponentModel.DataAnnotations";
             // 
+            // txtDiscription
+            // 
+            this.txtDiscription.Location = new System.Drawing.Point(116, 234);
+            this.txtDiscription.Name = "txtDiscription";
+            this.txtDiscription.Size = new System.Drawing.Size(192, 67);
+            this.txtDiscription.TabIndex = 20;
+            this.txtDiscription.Text = "";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(40, 237);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Discription";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 411);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtDiscription);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnChecked);
             this.Controls.Add(this.label8);
@@ -251,6 +272,8 @@
         private System.Windows.Forms.TextBox txtConfirmEmail;
         private System.Windows.Forms.Button btnChecked;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RichTextBox txtDiscription;
+        private System.Windows.Forms.Label label10;
     }
 }
 

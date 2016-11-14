@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 
-namespace Validation
+namespace WebValidation.Models
 {
     public class Person
     {
@@ -33,12 +31,12 @@ namespace Validation
         public string Password { get; set; }
 
         [Required]
-    
+
 
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Password must be same")]
         public string ConfirmPassword { get; set; }
 
-       public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (LastName != null && LastName.Split(' ').Length > 10)
             {
@@ -72,6 +70,4 @@ namespace Validation
             return ValidationResult.Success;
         }
     }
-
-    
 }
