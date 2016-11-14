@@ -3,8 +3,8 @@
 // Definitions by: Markus Peloso <https://github.com/ToastHawaii/>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-declare var sweetAlert: SweetAlert.SweetAlertStatic;
 declare var swal: SweetAlert.SweetAlertStatic;
+declare var sweetAlert: SweetAlert.SweetAlertStatic;
 
 declare module "sweetalert" {
     export = swal;

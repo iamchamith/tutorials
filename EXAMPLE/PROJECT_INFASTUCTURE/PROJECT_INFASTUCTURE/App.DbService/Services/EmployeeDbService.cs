@@ -17,6 +17,7 @@ namespace App.DbService.Services
         {
             try
             {
+                item.RegDate = DateTime.Now;
                 Employee obj = Mapper.Map<Employee>(item);
                 dba.Employees.Add(obj);
                 dba.SaveChanges();
@@ -50,7 +51,7 @@ namespace App.DbService.Services
         {
             try
             {
-                return dba.Employees.ToList().Select(x => Mapper.Map<EmployeeBo>(x)).ToList();
+                return dba.Employees.OrderByDescending(p=>p.Id).ToList().Select(x => Mapper.Map<EmployeeBo>(x)).ToList();
             }
             catch
             {
