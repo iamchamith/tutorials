@@ -1,0 +1,35 @@
+﻿0-
+0-
+0-http://localhost:33107/api/Tracing/GetTrace
+0-
+0-Route='controller:Tracing,action:GetTrace'
+0-Tracing
+0-
+0-
+0-DependancyInjections.Controllers.TracingController
+0-DependancyInjections.Controllers.TracingController
+0-
+0-
+0-Selected action 'GetTrace()'
+0-
+0-The authentication filter did not encounter an error or set a principal.
+0-
+0-
+0-
+0-
+0-Action='GetTrace()'
+0-Invoking action 'GetTrace()'
+0-this is test
+0-Action returned 'OK'
+0-Type='String', formatters=[JsonMediaTypeFormatterTracer, XmlMediaTypeFormatterTracer, FormUrlEncodedMediaTypeFormatterTracer, FormUrlEncodedMediaTypeFormatterTracer]
+0-Obtaining formatter of type 'JsonMediaTypeFormatter' for type='String', mediaType='text/html; charset=utf-8'
+0-Will use same 'JsonMediaTypeFormatter' formatter
+0-Selected formatter='JsonMediaTypeFormatter', content-type='text/html; charset=utf-8'
+OK-
+OK-
+OK-
+OK-Content-type='text/html; charset=utf-8', content-length=unknown
+0-Value='OK', type='String', content-type='text/html; charset=utf-8'
+0-
+0-
+0-
